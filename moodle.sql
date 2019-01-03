@@ -2963,7 +2963,6 @@ INSERT INTO "mdl_cache_flags" ("id", "flagtype", "name", "timemodified", "value"
 (842,	'userpreferenceschanged',	'843',	1546270546,	'1',	1546277746),
 (1592,	'accesslib/dirtycontexts',	'/1',	1546391361,	'1',	1546398561),
 (901,	'userpreferenceschanged',	'902',	1546401462,	'1',	1546408662),
-(1,	'userpreferenceschanged',	'2',	1546487514,	'1',	1546494714),
 (1593,	'accesslib/dirtycontexts',	'/1/25/1630',	1546487594,	'1',	1546494794),
 (1594,	'accesslib/dirtycontexts',	'/1/25/1628',	1546487594,	'1',	1546494794),
 (1595,	'accesslib/dirtycontexts',	'/1/25/1631',	1546487594,	'1',	1546494794),
@@ -2973,7 +2972,8 @@ INSERT INTO "mdl_cache_flags" ("id", "flagtype", "name", "timemodified", "value"
 (1590,	'accesslib/dirtyusers',	'22',	1546487672,	'1',	1546494872),
 (1598,	'accesslib/dirtycontexts',	'/1/1626/1636',	1546487672,	'1',	1546494872),
 (1599,	'accesslib/dirtycontexts',	'/1/1682/1683',	1546490037,	'1',	1546497237),
-(1600,	'accesslib/dirtycontexts',	'/1/1685',	1546491024,	'1',	1546498224);
+(1600,	'accesslib/dirtycontexts',	'/1/1685',	1546491024,	'1',	1546498224),
+(1,	'userpreferenceschanged',	'2',	1546497574,	'1',	1546504774);
 
 DROP TABLE IF EXISTS "mdl_capabilities";
 DROP SEQUENCE IF EXISTS mdl_capabilities_id_seq;
@@ -9246,8 +9246,10 @@ INSERT INTO "mdl_context" ("id", "contextlevel", "instanceid", "path", "depth", 
 (1709,	40,	33,	'/1/1703/1709',	3,	0),
 (350,	30,	322,	'/1/350',	2,	0),
 (351,	30,	323,	'/1/351',	2,	0),
+(1710,	40,	34,	'/1/1710',	2,	0),
 (352,	30,	324,	'/1/352',	2,	0),
 (353,	30,	325,	'/1/353',	2,	0),
+(1711,	40,	35,	'/1/1710/1711',	3,	0),
 (354,	30,	326,	'/1/354',	2,	0),
 (355,	30,	327,	'/1/355',	2,	0),
 (356,	30,	328,	'/1/356',	2,	0),
@@ -10626,7 +10628,9 @@ INSERT INTO "mdl_course_categories" ("id", "name", "idnumber", "description", "d
 (31,	'Pendidikan IPA',	'',	'',	1,	27,	220000,	0,	1,	1,	1546494082,	2,	'/27/31',	NULL),
 (22,	'Akuntansi',	'',	'',	1,	21,	130000,	0,	1,	1,	1546491969,	2,	'/21/22',	NULL),
 (32,	'Pendidikan TIK',	'',	'',	1,	27,	230000,	0,	1,	1,	1546494101,	2,	'/27/32',	NULL),
-(33,	'Pendidikan Bahasa Inggris',	'',	'',	1,	27,	240000,	0,	1,	1,	1546494124,	2,	'/27/33',	NULL);
+(33,	'Pendidikan Bahasa Inggris',	'',	'',	1,	27,	240000,	0,	1,	1,	1546494124,	2,	'/27/33',	NULL),
+(34,	'Psikologi',	'',	'',	1,	0,	250000,	0,	1,	1,	1546497604,	1,	'/34',	NULL),
+(35,	'Ilmu Psikologi',	'',	'',	1,	34,	260000,	0,	1,	1,	1546497619,	2,	'/34/35',	NULL);
 
 DROP TABLE IF EXISTS "mdl_course_completion_aggr_methd";
 DROP SEQUENCE IF EXISTS mdl_course_completion_aggr_methd_id_seq;
@@ -21343,7 +21347,12 @@ fontselect,fontsizeselect,wrap,code,search,replace,wrap,nonbreaking,charmap,tabl
 (3406,	'\core\event\course_category_created',	'core',	'created',	'course_category',	'course_categories',	31,	'c',	0,	1707,	40,	31,	2,	0,	NULL,	0,	'N;',	1546494082,	'web',	'192.168.9.6',	NULL),
 (3407,	'\core\event\course_category_created',	'core',	'created',	'course_category',	'course_categories',	32,	'c',	0,	1708,	40,	32,	2,	0,	NULL,	0,	'N;',	1546494101,	'web',	'192.168.9.6',	NULL),
 (3408,	'\core\event\course_category_created',	'core',	'created',	'course_category',	'course_categories',	33,	'c',	0,	1709,	40,	33,	2,	0,	NULL,	0,	'N;',	1546494124,	'web',	'192.168.9.6',	NULL),
-(3409,	'\core\event\dashboard_viewed',	'core',	'viewed',	'dashboard',	NULL,	NULL,	'r',	0,	5,	30,	2,	2,	0,	2,	0,	'N;',	1546494447,	'web',	'192.168.9.6',	NULL);
+(3409,	'\core\event\dashboard_viewed',	'core',	'viewed',	'dashboard',	NULL,	NULL,	'r',	0,	5,	30,	2,	2,	0,	2,	0,	'N;',	1546494447,	'web',	'192.168.9.6',	NULL),
+(3410,	'\core\event\course_viewed',	'core',	'viewed',	'course',	NULL,	NULL,	'r',	2,	2,	50,	1,	0,	1,	NULL,	0,	'N;',	1546497561,	'web',	'192.168.11.6',	NULL),
+(3411,	'\core\event\user_loggedin',	'core',	'loggedin',	'user',	'user',	2,	'r',	0,	1,	10,	0,	2,	0,	NULL,	0,	'a:1:{s:8:"username";s:8:"pusdakom";}',	1546497574,	'web',	'192.168.11.6',	NULL),
+(3412,	'\core\event\dashboard_viewed',	'core',	'viewed',	'dashboard',	NULL,	NULL,	'r',	0,	5,	30,	2,	2,	0,	2,	0,	'N;',	1546497574,	'web',	'192.168.11.6',	NULL),
+(3413,	'\core\event\course_category_created',	'core',	'created',	'course_category',	'course_categories',	34,	'c',	0,	1710,	40,	34,	2,	0,	NULL,	0,	'N;',	1546497604,	'web',	'192.168.11.6',	NULL),
+(3414,	'\core\event\course_category_created',	'core',	'created',	'course_category',	'course_categories',	35,	'c',	0,	1711,	40,	35,	2,	0,	NULL,	0,	'N;',	1546497619,	'web',	'192.168.11.6',	NULL);
 
 DROP TABLE IF EXISTS "mdl_lti";
 DROP SEQUENCE IF EXISTS mdl_lti_id_seq;
@@ -25980,7 +25989,6 @@ COMMENT ON TABLE "public"."mdl_sessions" IS 'Database based session storage - no
 
 INSERT INTO "mdl_sessions" ("id", "state", "sid", "userid", "sessdata", "timecreated", "timemodified", "firstip", "lastip") VALUES
 (40,	0,	'ls72a7lgqhm2330ommtegscv94',	0,	NULL,	1546271749,	1546271749,	'192.168.9.6',	'192.168.9.6'),
-(55,	0,	'unuodile3ei7pkrhfdmietc05a',	2,	NULL,	1546483934,	1546484421,	'192.168.11.6',	'192.168.11.6'),
 (58,	0,	'mpdnnkp1b2ijb26n2olmie9f91',	0,	NULL,	1546491751,	1546491828,	'192.168.9.6',	'192.168.9.6'),
 (59,	0,	's3jnedae3qghr7e9vu8qsistfm',	0,	NULL,	1546491996,	1546491996,	'192.168.11.20',	'192.168.11.20'),
 (13,	0,	'd079s0jj25np8t3ifap00sj0j7',	0,	NULL,	1546238791,	1546239927,	'192.168.11.253',	'192.168.11.253'),
@@ -25989,6 +25997,7 @@ INSERT INTO "mdl_sessions" ("id", "state", "sid", "userid", "sessdata", "timecre
 (43,	0,	'afivps2ktni0vdk73iiqp4p99a',	902,	NULL,	1546272663,	1546272868,	'192.168.9.6',	'192.168.9.6'),
 (49,	0,	'ls3ab9i770q8hbsv3gl9l6tuhg',	902,	NULL,	1546400614,	1546400639,	'192.168.11.229',	'192.168.11.229'),
 (57,	0,	'2iuknmunramj88gpa1p6umhtsq',	2,	NULL,	1546487514,	1546494490,	'192.168.9.6',	'192.168.9.6'),
+(62,	0,	'qleqpiiufshplgkuv3lakdscpo',	2,	NULL,	1546497574,	1546497604,	'192.168.11.6',	'192.168.11.6'),
 (50,	0,	'41nd6hm23lumsk67ld8g7rnpl7',	0,	NULL,	1546400662,	1546415131,	'192.168.11.6',	'192.168.11.6');
 
 DROP TABLE IF EXISTS "mdl_stats_daily";
@@ -29987,7 +29996,7 @@ INSERT INTO "mdl_user" ("id", "auth", "confirmed", "policyagreed", "deleted", "s
 (1587,	'manual',	1,	0,	0,	0,	1,	'162071900026',	'to be generated',	'',	'ZUMAROH',	'PBA',	'162071900026@umsida.ac.id',	0,	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'Sidoarjo',	'ID',	'en',	'gregorian',	'',	'Asia/Jakarta',	0,	0,	0,	0,	'',	'',	0,	'',	'',	1,	1,	0,	2,	1,	0,	1546241671,	1546241671,	0,	NULL,	NULL,	NULL,	NULL,	NULL),
 (1588,	'manual',	1,	0,	0,	0,	1,	'161080200053',	'to be generated',	'',	'Zurdan Bimantoro',	'108020/5B1',	'161080200053@umsida.ac.id',	0,	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'Sidoarjo',	'ID',	'en',	'gregorian',	'',	'Asia/Jakarta',	0,	0,	0,	0,	'',	'',	0,	'',	'',	1,	1,	0,	2,	1,	0,	1546241671,	1546241671,	0,	NULL,	NULL,	NULL,	NULL,	NULL),
 (902,	'manual',	1,	0,	0,	0,	1,	'4lf4n',	'$2y$10$d22V9/c4o3zrokeZUwtHS.RJ0UanulJR.Zal2O6PiCYK59O5f9VPe',	'',	'Mochamad Alfan',	'Rosid',	'alfanrosid@umsida.ac.id',	0,	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'sidoarjo',	'ID',	'en',	'gregorian',	'',	'Asia/Jakarta',	1546241901,	1546401461,	1546400614,	1546401323,	'192.168.11.115',	'',	0,	'',	'',	1,	1,	0,	2,	1,	0,	1546241663,	1546241878,	0,	'',	'',	'',	'',	''),
-(2,	'manual',	1,	0,	0,	0,	1,	'pusdakom',	'$2y$10$mUEjFyRcc3Hxnw182iT.j.wBW5vP4XANTl21V1ZpU/8RZ0881jJfG',	'',	'Admin',	'Administrator',	'pusdakom@umsida.ac.id',	0,	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'ID',	'en',	'gregorian',	'',	'Asia/Jakarta',	1545981864,	1546494447,	1546483934,	1546487514,	'192.168.9.6',	'',	0,	'',	'',	1,	1,	0,	1,	1,	0,	0,	1545982007,	0,	NULL,	'',	'',	'',	'');
+(2,	'manual',	1,	0,	0,	0,	1,	'pusdakom',	'$2y$10$mUEjFyRcc3Hxnw182iT.j.wBW5vP4XANTl21V1ZpU/8RZ0881jJfG',	'',	'Admin',	'Administrator',	'pusdakom@umsida.ac.id',	0,	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'',	'ID',	'en',	'gregorian',	'',	'Asia/Jakarta',	1545981864,	1546497574,	1546487514,	1546497574,	'192.168.11.6',	'',	0,	'',	'',	1,	1,	0,	1,	1,	0,	0,	1545982007,	0,	NULL,	'',	'',	'',	'');
 
 DROP TABLE IF EXISTS "mdl_user_devices";
 DROP SEQUENCE IF EXISTS mdl_user_devices_id_seq;
@@ -32272,4 +32281,4 @@ CREATE INDEX "mdl_workrubrleve_dim_ix" ON "public"."mdl_workshopform_rubric_leve
 COMMENT ON TABLE "public"."mdl_workshopform_rubric_levels" IS 'The definition of rubric rating scales';
 
 
--- 2019-01-03 06:37:43.943113+00
+-- 2019-01-03 06:40:25.973893+00
